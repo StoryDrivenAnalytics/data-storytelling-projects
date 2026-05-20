@@ -1,0 +1,12 @@
+select count(*) as total_customers from customer_churn;
+select customerId,tenure,monthlyCharges,TotalCharges from customer_churn where TotalCharges=' ' or TotalCharges='' ;
+ select contract,count(*) as total from customer_churn group by contract;
+ select onlinesecurity,count(*) from customer_churn group by onlinesecurity;
+ select techsupport,count(*) from customer_churn group by techsupport;
+ select OnlineBackuo,count(*) from customer_churn group by OnlineBackup;
+ update customer_churn set onlinesecurity ='No' where onlinesecurity='No internet service';
+ update customer_churn set techsupport ='No' where techsupport='No internet service';
+ update customer_churn set DeviceProtection ='No' where DeviceProtection='No internet service';
+ update customer_churn set StreamingTV ='No' where StreamingTV='No internet service';
+ update customer_churn set StreamingMovies ='No' where StreamingMovies='No internet service';
+ update customer_churn set OnlineBackup ='No' where OnlineBackup='No internet service';
